@@ -1,7 +1,11 @@
 export async function main(ns) {
     while (true) {
-        const server = ns.args[0];
-        await ns.share(server); // Shares money with other players on the specified server
-}
+        ns.print("Time: " + new Date().toLocaleTimeString());
+        await ns.share();
 
+        let sharePower = ns.getSharePower();
+
+        ns.print("Share Power is " + sharePower);
+        ns.print("--------------------------------");
+    }
 }
