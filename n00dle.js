@@ -1,4 +1,5 @@
 export async function main(ns) {
+    // @ignore-infinite-loop
     while (true) {
         if (ns.getServerSecurityLevel("n00dles") > ns.getServerMinSecurityLevel("n00dles") + 5) {
             await ns.weaken("n00dles");
