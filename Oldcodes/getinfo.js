@@ -5,5 +5,5 @@ export async function main(ns) {
 
     ns.tprint(`Number of arguments: ${args.length}`);
     ns.tprint(`First argument: ${args[0]}`);
-    ns.tprint(ns.getServer(host?: args[0]));
+    ns.tprint(ns.getServer(args[0]));
 }
