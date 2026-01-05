@@ -1,23 +1,22 @@
 export async function main(ns) {
     const server = ns.args[0];
     const batchercount = ns.args[1];
-    const batchers = [];
-    const singer = ns.run("singler.js", 1, server);
 
-    for (let i = 0; i < batchercount; i++) {
-        const batcher = ns.run("Batcher.js", 1, server);
-        batchers.push(batcher);
-        ns.tprint(`Started Batcher ${i + 1} with PID ${batcher}`);
-        while (true) {
-            //weaken grow hack cycle
-            await ns.sleep(1000);
-
-            singer
-            
-        }
-
-        
-
+    if (!server || !batchercount) {
+        ns.tprint("Usage: run Batcher.js [server] [batchercount]");
+        return;
     }
-    
+
+    const batchers = [];
+    for (let i = 0; i < batchercount; i++) {
+        const pid = ns.run("singler.js", 1, server);
+        if (pid !== 0) {
+            batchers.push(pid);
+            ns.tprint(`Started singler.js instance ${i + 1} with PID ${pid}`);
+        } else {
+            ns.tprint(`Failed to start singler.js instance ${i + 1}`);
+        }
+        await ns.sleep(100); // Small delay to avoid race conditions
+    }
 }
+    
