@@ -10,9 +10,14 @@ export async function main(ns) {
         ns.tprint(`Started Batcher ${i + 1} with PID ${batcher}`);
         while (true) {
             //weaken grow hack cycle
+            await ns.sleep(1000);
+
             singer
             
         }
 
+        
+
     }
+    
 }
