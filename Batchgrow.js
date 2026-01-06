@@ -9,12 +9,12 @@ export async function main(ns) {
 
     const batchers = [];
     for (let i = 0; i < batchercount; i++) {
-        const pid = ns.grow(server);
+        const pid = ns.run("grow.js", 1, server);
         if (pid !== 0) {
             batchers.push(pid);
-            ns.tprint(`Started grow instance ${i + 1} with PID ${pid}`);
+            ns.tprint(`Started grow.js instance ${i + 1} with PID ${pid}`);
         } else {
-            ns.tprint(`Failed to start grow instance ${i + 1}`);
+            ns.tprint(`Failed to start grow.js instance ${i + 1}`);
         }
         await ns.sleep(100); // Small delay to avoid race conditions
     }
