@@ -1,12 +1,18 @@
 export async function main(ns) {
-    const servers =  ns.args.slice(0);
-    ns.brutessh(servers);
-    ns.ftpcrack(servers);
-    ns.relaysmtp(servers);
-    ns.httpworm(servers);
-    ns.sqlinject(servers);
+
+    const servers = ns.args.slice(0);
+
+    for (const server of servers) {
+    ns.brutessh(server);
+    ns.ftpcrack(server);
+    ns.relaysmtp(server);
+    ns.httpworm(server);
+    ns.sqlinject(server);
+    ns.nuke(server);
     await ns.sleep(200);
-    ns.tprint(`Attempting to backdoor ${servers}...`);
-    const success = ns.backdoor(servers);
+    
+    ns.tprint(`Attempting to backdoor ${server}...`);
+    const success = ns.backdoor(server);
+    }
 
 }
