@@ -21,3 +21,4 @@ export async function main(ns) {
         }
     }
 }
+// arraybatcher1.js 2500 iron-gym harakiri-sushi hong-fang-tea joesguns max-hardware nectar-net sigma-cosmetics computek omega-net lexo-corp zb-institute catalyst crush-fitness syscore the-hub phantasy neo-net taiyang-digital univ-energy defcomm unitalife global-pharm aevum-police nova-med infocomm solaris deltaone zeus-med zb-def icarus omnia snap-fitness rho-construction rothman-uni johnson-ortho galactic-cyber millenium-fitness aerocorp alpha-ent summit-uni netlink n00dles foodnstuff zer0 silver-helix
